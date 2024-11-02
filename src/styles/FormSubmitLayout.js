@@ -55,13 +55,13 @@ export const FormSubmitStyle = styled.div`
             margin: auto;
             display: flex;
             flex-direction: column;
-            margin: 0 10px;
+            padding: 0 10px;
             @media (min-width:1024px) {
-            margin: 0 50px;
+            padding: 0 50px;
             flex-direction: row;
             }
             @media (min-width:1280px) {
-                margin: 0 150px;
+                padding: 0 150px;
             }
             .box-content{ 
                 display: block;

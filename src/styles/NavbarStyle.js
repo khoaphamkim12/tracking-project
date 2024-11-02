@@ -12,6 +12,10 @@ export const NavbarStyle = styled.nav`
         left: 0;
         top: 0;
         right: 0;
+        &.scrolled{
+            background-color: #fff;
+            box-shadow: 0 3px 10px 0 rgba(22,28,45,.08);
+         }
         .nav-container{
             display: block;
         }
@@ -46,16 +50,18 @@ export const NavbarStyle = styled.nav`
                 padding-top: 0;
             }
             
-            .nav-link{ 
+            .nav-link { 
                 padding:  0;
                 .nav-item { 
                 text-decoration: none;
                 font-weight: 700;
                 color: #161c2d;
                 transition: 0.2s;
-                &:hover{ 
-                    color: #05bd93;
                 }
+                &:where(:hover,.active) { 
+                    .nav-item{ 
+                        color: #05bd93;
+                    }
                 }
             }
         }

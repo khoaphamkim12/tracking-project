@@ -2,7 +2,7 @@
 import React from 'react'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import { LayoutStyle } from './styles/Layout/LayoutStyle'
+import { LayoutStyle } from './styles/LayoutStyle'
 
 // @ts-ignore
 export default function Layout({ children }) {

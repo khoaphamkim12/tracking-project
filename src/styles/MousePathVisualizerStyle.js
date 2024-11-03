@@ -36,6 +36,7 @@ export const MousePathVisualizerStyle = styled.div`
             margin-left:34px;
             margin-top: 12px;
             background-color: rgba(5,189,147,.1);
+            backdrop-filter: blur(10px);
             svg{
                 width: 223px;
                 height: 131px;

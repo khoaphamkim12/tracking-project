@@ -9,7 +9,7 @@ import useClickTracker from './hooks/useClickTracker';
 export const AppRoute = {
   home: { name: 'Home', path: '/' },
   userBehaviorNavigation: { name: 'User Behavior Navigation', path: '/user-behavior-navigation' },
-  notFound: { name: 'Home', path: '/' },
+  notFound: { name: 'Home', path: '*' },
 }
 const App = () => {
   useClickTracker();
@@ -19,7 +19,7 @@ const App = () => {
         <Routes>
           <Route path={AppRoute.home.path} element={<Home />} />
           <Route path={AppRoute.userBehaviorNavigation.path} element={<UserBehaviorNavigation />} />
-          <Route path='*' element={<NotFound />} />
+          <Route path={AppRoute.notFound.path} element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>

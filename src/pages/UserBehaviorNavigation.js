@@ -7,6 +7,8 @@ import useLocalStorage from 'hooks/useLocalStorage';
 import PieChart from 'components/PieChart';
 import PieChartPageNavigator from 'components/PieChartPageNavigator';
 import CustomBarChart from 'components/CustomBarChart';
+import BoxViewTotalClick from 'components/BoxViewTotalClick';
+import BoxViewTotalNavigation from 'components/BoxViewTotalNavigation';
 
 const UserBehaviorNavigation = () => {
 
@@ -19,6 +21,14 @@ const UserBehaviorNavigation = () => {
 
     return (
         <UserBehaviorNavigationStyle>
+            <div className="box-main">
+                <div className="cols">
+                    <BoxViewTotalClick />
+                    <BoxViewTotalNavigation />
+                    <BoxViewTotalClick />
+                    <BoxViewTotalNavigation />
+                </div>
+            </div>
             <div className="box">
                 <div className='box-overall'>
                     <div className="box-container">
@@ -52,6 +62,7 @@ const UserBehaviorNavigation = () => {
                     <PieChartPageNavigator />
                 </div>
             </div>
+
         </UserBehaviorNavigationStyle>
     );
 };

@@ -13,6 +13,133 @@ export const UserBehaviorNavigationStyle = styled.section`
     @media (min-width:1280px) {
         padding: 80px 150px;  
     }
+    .center{ 
+        text-align: center;
+    }
+    .title { 
+        font-size: 1.75rem;
+        line-height: 1;
+        font-weight: 700;
+        margin-top: 0rem;
+        margin-bottom: 0.25rem;
+        &.primary {
+            color: #05bd93;
+        }
+        &.danger{
+            color: rgba(255, 99, 132, 1);
+        }
+    }
+
+    .box-main  {
+        margin-top: 1rem;
+        max-width: 102rem;
+        margin: auto;
+        .cols { 
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            box-sizing: border-box;
+            margin-top: 1rem;
+            position: relative;
+            &.absolute {
+                position: absolute;
+                left: 0;
+                right: 10px;
+                bottom: 10px;
+            }
+            .col-4 { 
+                width: calc(50% - 1rem);
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+                background: #fff;
+                box-shadow: 0 3px 10px 0 rgba(22,28,45,.08);
+                border-radius: 10px;
+                padding: 25px;
+                box-sizing: border-box;
+                position: relative;
+                padding-bottom: 5rem;
+                &:nth-child(even){ 
+                    margin-right: 0;
+                    width: 50%;
+                }
+
+                @media (min-width:768px) {
+                    width: calc(50% - 1rem);
+                    &:nth-child(even){ 
+                        margin-right: 0;
+                        width: 50%;
+                    }
+                }
+                @media (min-width:1024px) {
+                    width: calc(25% - 1rem);
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
+                    &:nth-child(4n){ 
+                        margin-right: 0;
+                        width: 25%;
+                    }
+                    &:nth-child(even){ 
+                        margin-right: 1rem;
+                        width: calc(25% - 1rem);
+                    }
+                }
+                @media (min-width:1280px) {
+                    width: calc(25% - 1rem);
+                    margin-right: 1rem;
+                    margin-bottom: 1rem; 
+                    &:nth-child(4n){ 
+                        margin-right: 0;
+                        width: 25%;
+                    }
+                    &:nth-child(even){ 
+                        margin-right: 1rem;
+                        width: calc(25% - 1rem);
+                    }
+                }
+            }
+            .col-3 { 
+                width: calc(100%);
+                margin-bottom: 1rem;
+                background: #fff;
+                box-shadow: 0 3px 10px 0 rgba(22,28,45,.08);
+                border-radius: 10px;
+                padding: 25px;
+                box-sizing: border-box;
+
+                @media (min-width:768px) {
+                    width: calc(50% - 1rem);
+                    &:last-child{ 
+                        margin-right: 0;
+                        width: 50%;
+                    }
+                }
+                @media (min-width:1024px) {
+                    width: calc(33.33% - 1rem);
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
+                    &:last-child{ 
+                        margin-right: 0;
+                        width: 33.33%;
+                    }
+                }
+                @media (min-width:1280px) {
+                    width: calc(33.33% - 1rem);
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
+                    &:last-child{ 
+                        margin-right: 0;
+                        width: 33.33%;
+                    }
+                }
+            }
+            .col-2 { 
+                width: calc(50%);
+                box-sizing: border-box;
+                
+            }
+
+        }
+    }
     .box{ 
         max-width: 102rem;
         margin: auto;
@@ -119,7 +246,6 @@ export const UserBehaviorNavigationStyle = styled.section`
                         line-height: 1.6;
                         font-weight: 700;
                     }
-                   
 
                 }
             }

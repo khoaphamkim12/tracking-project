@@ -9,12 +9,14 @@ function useClickTracker() {
         const dateNum = new Date().toISOString().split('T')[0];
         const clickedElement = event.target;
         const elementType = clickedElement.tagName;
-        const clickData = clickDataLocal;
+        const clickData = clickDataLocal || {};
+
         if (listTagTrack.includes(elementType)) {
-            if (!clickData[elementType]) {
+            console.log('clickData', clickData)
+            if (!clickData?.[elementType]) {
                 clickData[elementType] = {}
             }
-            if (!clickData[elementType][dateNum]) {
+            if (!clickData?.[elementType]?.[dateNum]) {
                 clickData[elementType][dateNum] = {}
             }
             clickData[elementType][dateNum].clicked = (clickData[elementType][dateNum].clicked || 0) + 1;

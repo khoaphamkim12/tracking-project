@@ -25,9 +25,7 @@ export default function HomeOverall() {
         setTextAreaCountClick(clickData?.TEXTAREA?.[dateNum]?.clicked || 0)
         setFormSubmitCountClick(clickData?.FORM_SUBMIT?.[dateNum]?.clicked || 0)
         setVisitHomePage(navPages?.[dateNum]?.[AppRoute.home.path] || 0)
-        console.log(navPages)
-        console.log(dateNum)
-    }, [clickData, navPages])
+    }, [clickData, navPages, dateNum])
 
     return (
         <HomeOverallStyle>
@@ -43,7 +41,7 @@ export default function HomeOverall() {
                 <CardBox icon={'/image/click-icon.png'} title={' Click Button Page'} number={btnCountClick} />
                 <CardBox icon={'/image/chip-icon.png'} title={' Click Input Page'} number={inputCountClick} />
                 <CardBox icon={'/image/diamond-icon.png'} title={' Click Link Page'} number={tagACountClick} />
-                <CardBox icon={'/image/gift-icon.png'} title={' Click Button Page'} number={textAreaCountClick} />
+                <CardBox icon={'/image/gift-icon.png'} title={' Click Text Area Page'} number={textAreaCountClick} />
                 <CardBox icon={'/image/submit-icon.png'} title={' Visit Home Page'} number={visitHomePage} />
             </div>
         </HomeOverallStyle>

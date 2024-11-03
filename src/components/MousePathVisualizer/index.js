@@ -5,7 +5,7 @@ import { MousePathVisualizerStyle } from 'styles/MousePathVisualizerStyle';
 
 const MousePathVisualizer = () => {
     const [mousePath, setMousePath] = useState([]);
-    const [timeUp, setTimeUp] = useState({ hours: 0, minutes: 0, seconds: 0 })
+    const [timeSpent, setTimeSpent] = useState(0);
     const svgRef = useRef();
     const maxPathLength = 10000;
 
@@ -32,22 +32,24 @@ const MousePathVisualizer = () => {
         };
     }, []);
     useEffect(() => {
-        let interval = null;
+        // Lấy thời gian đã lưu trong localStorage
+        const savedTime = localStorage.getItem('timeSpent');
+        const initialTime = Number(savedTime) ? Number(savedTime) : 0;
+        console.log('initialTime', savedTime)
+        setTimeSpent(initialTime);
 
-        interval = setInterval(() => {
-            setTimeUp((prevTime) => {
-                const newSeconds = prevTime.seconds + 1;
-                const newMinutes = Math.floor(newSeconds / 60);
-                const newHours = Math.floor(newMinutes / 60);
-                return {
-                    hours: newHours,
-                    minutes: newMinutes % 60,
-                    seconds: newSeconds % 60,
-                };
+        // Bắt đầu đếm thời gian
+        const interval = setInterval(() => {
+            setTimeSpent((prevTime) => {
+                const newTime = prevTime + 1;
+                localStorage.setItem('timeSpent', newTime);
+                return newTime;
             });
-        }, 1000);
-        return () => clearInterval(interval); // Dọn dẹp interval khi component unmount
-    }, [timeUp]);
+        }, 1000); // Cập nhật mỗi giây
+
+        // Dọn dẹp khi component unmount
+        return () => clearInterval(interval);
+    }, []);
 
     // Hàm vẽ đường đi của chuột
     const drawPath = (width, height) => {
@@ -95,20 +97,25 @@ const MousePathVisualizer = () => {
         const height = window.innerWidth >= 768 ? 255 : 131
         drawPath(width, height); // Vẽ đường đi mỗi khi mousePath thay đổi
     }, [mousePath]);
+    const hours = Math.floor(timeSpent / 3600);
+    const minutes = Math.floor((timeSpent % 3600) / 60);
+    const seconds = timeSpent % 60;
+
+    const formatTime = (time) => String(time).padStart(2, '0');
 
     return (
         <MousePathVisualizerStyle>
             <div className='laptop'>
                 <div className='overlay'>
-                    <img src='/image/laptop-screen.png' />
+                    <img src='/image/laptop-screen.png' alt='Tracking App' />
                 </div>
                 <div className='laptop-screen'>
                     <svg ref={svgRef} width="430" height="255" style={{ border: '1px solid black' }} />
                     <div className='count-up'>
                         <p className='time'>
-                            {String(timeUp.hours).padStart(2, '0')}:
-                            {String(timeUp.minutes).padStart(2, '0')}:
-                            {String(timeUp.seconds).padStart(2, '0')}
+                            {formatTime(hours)}:
+                            {formatTime(minutes)}:
+                            {formatTime(seconds)}
                         </p>
                     </div>
                 </div>

@@ -22,6 +22,9 @@ export const NavbarStyle = styled.nav`
         .burger{ 
             display: block;
             margin-top: 2px;
+            padding: 0;
+            border: none;
+            background: transparent;
             svg {
                 width: 40px;
                 height: 20px;
@@ -69,8 +72,8 @@ export const NavbarStyle = styled.nav`
             padding: 12px 20px 10px 30px;
             .burger{ 
             svg {
-                width: 25px;
-                height: 25px;
+                width: 40px;
+                height: 20px;
             }
         }
 

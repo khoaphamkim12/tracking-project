@@ -12,7 +12,6 @@ function useClickTracker() {
         const clickData = clickDataLocal || {};
 
         if (listTagTrack.includes(elementType)) {
-            console.log('clickData', clickData)
             if (!clickData?.[elementType]) {
                 clickData[elementType] = {}
             }

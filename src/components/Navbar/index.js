@@ -38,9 +38,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div>
-                    <a className='burger' onClick={() => {
-                        console.log('click')
+                    <button className='burger' onClick={() => {
                         setHideMenu(hideMenu ? false : true)
+                        setScrolled(hideMenu ? 100 : 0)
                     }}>
                         <svg
                             className="w-[24px] h-[24px] xl:w-[66px] xl:h-[32px]"
@@ -68,7 +68,7 @@ export default function Navbar() {
                                 strokeLinejoin="round"
                             ></path>
                         </svg>
-                    </a></div>
+                    </button></div>
             </div>
         </NavbarStyle>
     )

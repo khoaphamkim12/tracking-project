@@ -41,6 +41,7 @@ export const CardBoxStyle = styled.div`
             font-size: 24px;
             font-weight: 700px;
             line-height: 1.3;
+            margin-bottom: 0;
          }
     }
 `

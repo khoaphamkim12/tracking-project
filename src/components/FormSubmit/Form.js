@@ -26,9 +26,6 @@ const Form = () => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Full Name:', fullName);
-        console.log('Email:', email);
-        console.log('Contact:', contact);
         // Reset form
         setFullName('');
         setEmail('');

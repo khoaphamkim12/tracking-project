@@ -93,7 +93,6 @@ const MousePathVisualizer = () => {
     useEffect(() => {
         const width = window.innerWidth >= 768 ? 430 : 223
         const height = window.innerWidth >= 768 ? 255 : 131
-        console.log(width, height)
         drawPath(width, height); // Vẽ đường đi mỗi khi mousePath thay đổi
     }, [mousePath]);
 

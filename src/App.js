@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import UserBehaviorNavigation from './pages/UserBehaviorNavigation';
 import NotFound from './pages/NotFound';
 import Layout from './Layout';
+import useClickTracker from './hooks/useClickTracker';
 export const AppRoute = {
   home: { name: 'Home', path: '/' },
   userBehaviorNavigation: { name: 'User Behavior Navigation', path: '/user-behavior-navigation' },
   notFound: { name: 'Home', path: '/' },
 }
 const App = () => {
+  useClickTracker();
   return (
     <Router>
       <Layout>

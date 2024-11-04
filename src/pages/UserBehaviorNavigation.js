@@ -9,6 +9,7 @@ import PieChartPageNavigator from 'components/PieChartPageNavigator';
 import CustomBarChart from 'components/CustomBarChart';
 import BoxViewTotalClick from 'components/BoxViewTotalClick';
 import BoxViewTotalNavigation from 'components/BoxViewTotalNavigation';
+import BoxUserNavigation from 'components/BoxUserNavigation';
 
 const UserBehaviorNavigation = () => {
 
@@ -50,6 +51,9 @@ const UserBehaviorNavigation = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="box-main">
+                <BoxUserNavigation />
             </div>
             <div className='box-admin'>
                 <div className='box-top-left'>

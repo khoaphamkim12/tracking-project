@@ -34,6 +34,42 @@ export const UserBehaviorNavigationStyle = styled.section`
         margin-top: 1rem;
         max-width: 102rem;
         margin: auto;
+        .box-content { 
+            background: #fff;
+            box-shadow: 0 3px 10px 0 rgba(22,28,45,.08);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 1rem;
+            h2{ 
+                margin-top: 0;
+            }
+            .box-wrap{ 
+                display: block;
+                margin-top: 2rem;
+                @media (min-width:768px) {
+                    display: flex;
+                }
+                .box-left{ 
+                    width: calc(100%);
+                    margin-right: 0rem;
+                    margin-bottom: 1rem;
+                    @media (min-width:768px) {
+                        width: calc(30% - 1rem);
+                        margin-right: 1rem;
+                        margin-bottom: 0rem;
+                    }
+                }
+                .box-right{ 
+                    width: 100%;
+                    margin:0;
+                    @media (min-width:768px) {
+                        width: 60%;
+                        margin:auto;
+                    }
+                }
+            }
+            
+        }
         .cols { 
             display: flex;
             flex-wrap: wrap;
@@ -251,7 +287,7 @@ export const UserBehaviorNavigationStyle = styled.section`
             }
         }
         .box-top-right{ 
-            padding: 1rem;
+            padding: 25px 1rem;
             width: 100%;
             border-radius: 10px;
             margin-bottom: 1rem;
